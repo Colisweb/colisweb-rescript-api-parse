@@ -26,15 +26,22 @@ module Context = {
 
 @react.component
 let make = (~code, ~title) => {
+  let {setState} = React.useContext(Context.context)
+
   <div className="Code border w-[800px] h-full overflow-auto z-40 shadow-lg flex-shrink-0">
-    <div className="border-b p-4">
-      <h2 className="text-xl font-semibold"> {title->React.string} </h2>
-      <button
-        className="absolute right-0 top-0 bg-white rounded-tl rounded-b text-lg px-2 border-b border-l hover:bg-neutral-200"
-        onClick={_ => copyToClipboard(Obj.magic(code))}>
-        {"Copy"->React.string}
-      </button>
-    </div>
+    <header className="border-b p-4 flex flex-row justify-between gap-4">
+      <div>
+        <h2 className="text-xl font-semibold"> {title->React.string} </h2>
+        <button
+          className="bg-white rounded-tl rounded-b text-sm px-2 border hover:bg-neutral-200"
+          onClick={_ => copyToClipboard(Obj.magic(code))}>
+          {"Copy the code"->React.string}
+        </button>
+      </div>
+      <div>
+        <button onClick={_ => setState(None)}> {"Close"->React.string} </button>
+      </div>
+    </header>
     <pre className="p-4">
       <code
         dangerouslySetInnerHTML={
