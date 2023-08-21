@@ -1,3 +1,157 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* purgecss start ignore */
+.hljs {
+  display: block;
+
+  /*overflow-x: auto;*/
+  /*background: #f8f8ff;*/
+}
+
+.hljs-quote {
+  color: #408080;
+  font-style: italic;
+}
+
+.hljs-operator,
+.hljs-literal {
+  color: #b151dd;
+}
+
+.hljs-comment {
+  color: #979aad;
+}
+
+.hljs-selector-tag,
+.hljs-subst {
+  color: #954121;
+}
+
+.hljs-keyword {
+  color: #02a875;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-doctag {
+  color: #5e5ede;
+}
+
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #19469d;
+}
+
+.hljs-params {
+  color: #00f;
+}
+
+.hljs-title {
+  color: #458;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #376fdd;
+  font-weight: normal;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #008080;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #b68;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #727489;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* tweaks to syntax highlighting, assuming atom-one-light theme */
+
+.hljs-character {
+  color: #388b72;
+}
+.hljs-module-identifier {
+  color: #b151dd;
+}
+.hljs-constructor {
+  color: #dd8c1b;
+}
+
+/* DARK MODE COLORS */
+
+.hljs.dark {
+  color: #cdcdd6;
+}
+
+.hljs.dark .hljs-comment {
+  color: #546e7a;
+}
+
+.hljs.dark .hljs-number,
+.hljs.dark .hljs-string,
+.hljs.dark .hljs-doctag {
+  color: #388b72;
+}
+
+.hljs.dark .hljs-keyword {
+  color: #a766d0;
+}
+
+.hljs.dark .hljs-built_in,
+.hljs.dark .hljs-builtin-name {
+  color: #637cc1;
+}
+
+.hljs.dark .hljs-title {
+  color: inherit;
+}
+
+.hljs.dark .hljs-params {
+  color: inherit;
+}
+
+.Code {
+  background: #fafbfc;
+}
+
+.Code code {
+  font-family: SFMono-Regular, Roboto Mono, Menlo, Segoe UI, Courier, monospace !important;
+  font-size: 0.875rem !important;
+  font-weight: 500;
+}

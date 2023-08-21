@@ -1,7 +1,7 @@
 let worker = Msw.setupWorker([
   Msw.Rest.get("http://someapi.com/deliveries", (_req, res, ctx) => {
     let response = Array.makeBy(5, i => {
-      ExampleWithoutDecco.Example1.id: i->Int.toString,
+      WithoutDecco__Example1.id: i->Int.toString,
       address: "address",
       country: None,
       clientName: i < 5 ? Js.Nullable.return("clientName") : Js.Nullable.null,
@@ -14,7 +14,7 @@ let worker = Msw.setupWorker([
   }),
   Msw.Rest.get("http://someapi.com/special", (_req, res, ctx) => {
     let response = Array.makeBy(10, i => {
-      ExampleWithoutDecco.Example2.uniqueId: i->Int.toString,
+      WithoutDecco__Example2.uniqueId: i->Int.toString,
       phone: i > 5 ? Some("0320000" ++ i->Int.toString) : None,
       name: i < 5 ? Some(Js.Nullable.return("client n°" ++ i->Int.toString)) : None,
       type_: mod(i, 2) === 0 ? #element1 : #element2,

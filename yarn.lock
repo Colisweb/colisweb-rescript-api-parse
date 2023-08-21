@@ -1417,6 +1417,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:11.8.0":
+  version: 11.8.0
+  resolution: "highlight.js@npm:11.8.0"
+  checksum: d2578a57aee7315946ff19379053fd0a28b127baabf7617ab1d28d62cdc4eaf3d75053569cb8479a5afdc7a68f1ba9a6c1d612d8ae399b4b9aa43093b4fb6831
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
@@ -2950,6 +2957,7 @@ __metadata:
     autoprefixer: ^10.4.15
     axios: ^1.4.0
     decco: ^1.6.0
+    highlight.js: 11.8.0
     msw: ^1.2.3
     postcss: ^8.4.28
     react: ^18.2.0

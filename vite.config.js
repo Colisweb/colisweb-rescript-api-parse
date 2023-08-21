@@ -1,5 +1,8 @@
 import { defineConfig } from "vite";
 import createReScriptPlugin from "@jihchi/vite-plugin-rescript";
+import fs from "fs";
+
+const appDirectory = fs.realpathSync(process.cwd());
 
 export default defineConfig({
   plugins: [
@@ -10,4 +13,15 @@ export default defineConfig({
       },
     }),
   ],
+  optimizeDeps: {
+    include: ["highlight.js"],
+  },
+  resolve: {
+    alias: [
+      {
+        find: "@root",
+        replacement: (_) => appDirectory,
+      },
+    ],
+  },
 });
