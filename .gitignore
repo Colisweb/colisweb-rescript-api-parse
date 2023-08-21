@@ -1,0 +1,48 @@
+# Normal npm stuff
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/node_modules/
+/.cache/
+/dist/
+/build/
+
+# Bucklescript stuff
+/lib
+/types
+.merlin
+.bsb.lock
+*.bs.js
+
+# Git secret
+.gitsecret/keys/random_seed
+ci-gitlab-key
+ci-npm-key
+deploy/staging-secrets.yaml
+deploy/testing-secrets.yaml
+deploy/recette-secrets.yaml
+deploy/production-secrets.yaml
+
+# Env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env
+
+.husky/_/
+!*.secret
+
+stats.html
+/.idea/
+
+
+# yarn v2
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

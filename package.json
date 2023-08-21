@@ -1,0 +1,40 @@
+{
+  "name": "vite-template-rescript",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@rescript/react": "^0.11.0",
+    "autoprefixer": "^10.4.15",
+    "axios": "^1.4.0",
+    "decco": "^1.6.0",
+    "msw": "^1.2.3",
+    "postcss": "^8.4.28",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rescript": "^10.1.4",
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "clean": "node_modules/.bin/rescript clean -with-deps",
+    "dev": "NINJA_ANSI_FORCED=1 node_modules/.bin/vite",
+    "res:build": "node_modules/.bin/rescript build -with-deps",
+    "dev:res": "node_modules/.bin/rescript build -with-deps -w",
+    "format": "node_modules/.bin/rescript format -all",
+    "serve": "node_modules/.bin/vite preview",
+    "build": "NINJA_ANSI_FORCED=1 node_modules/.bin/vite build",
+    "localbuild": "BASE_PATH=\"/\" NINJA_ANSI_FORCED=1 node_modules/.bin/vite build",
+    "test": "node_modules/.bin/rescript build && yarn intl:check",
+    "intl:check": "node node_modules/@colisweb/rescript-toolkit/src/intl/check.cjs",
+    "intl:extract": "node node_modules/@colisweb/rescript-toolkit/src/intl/extract.cjs",
+    "prepare": "husky install"
+  },
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "@jihchi/vite-plugin-rescript": "^5.3.0",
+    "vite": "^4.4.9"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
