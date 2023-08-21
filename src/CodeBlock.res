@@ -34,12 +34,14 @@ let make = (~code, ~title) => {
         <h2 className="text-xl font-semibold"> {title->React.string} </h2>
         <button
           className="bg-white rounded-tl rounded-b text-sm px-2 border hover:bg-neutral-200"
-          onClick={_ => copyToClipboard(Obj.magic(code))}>
+          onClick={_ => copyToClipboard(code)}>
           {"Copy the code"->React.string}
         </button>
       </div>
       <div>
-        <button onClick={_ => setState(None)}> {"Close"->React.string} </button>
+        <button onClick={_ => setState(None)} className="hover:underline">
+          {"Close"->React.string}
+        </button>
       </div>
     </header>
     <pre className="p-4">
