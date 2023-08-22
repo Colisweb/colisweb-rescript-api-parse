@@ -17,7 +17,7 @@
   ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": ["decco", "@rescript/react"],
+  "bs-dependencies": ["decco", "@rescript/react", "@colisweb/rescript-toolkit"],
   "ppx-flags": ["decco/ppx"],
   "warnings": {
     "number": "-44-30",

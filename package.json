@@ -5,17 +5,18 @@
   "private": true,
   "homepage": "/colisweb-rescript-api-parse/",
   "dependencies": {
-    "@rescript/react": "^0.11.0",
-    "autoprefixer": "^10.4.15",
-    "axios": "^1.4.0",
-    "decco": "^1.6.0",
+    "@colisweb/rescript-toolkit": "4.14.5",
+    "@rescript/react": "0.11.0",
+    "autoprefixer": "10.4.15",
+    "axios": "1.4.0",
+    "decco": "1.6.0",
     "highlight.js": "11.8.0",
-    "msw": "^1.2.3",
-    "postcss": "^8.4.28",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rescript": "^10.1.4",
-    "tailwindcss": "^3.3.3"
+    "msw": "1.2.3",
+    "postcss": "8.4.28",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rescript": "10.1.4",
+    "tailwindcss": "3.3.3"
   },
   "scripts": {
     "clean": "node_modules/.bin/rescript clean -with-deps",
