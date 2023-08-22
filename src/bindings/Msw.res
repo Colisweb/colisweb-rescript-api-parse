@@ -4,8 +4,11 @@ type worker
 @module("msw") @variadic
 external setupWorker: array<mock> => worker = "setupWorker"
 
+type rec startOptions = {serviceWorker: serviceWorker}
+and serviceWorker = {url: string}
+
 @send
-external start: worker => unit = "start"
+external start: (worker, startOptions) => unit = "start"
 @send
 external stop: worker => unit = "stop"
 

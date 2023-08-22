@@ -24,5 +24,9 @@ let worker = Msw.setupWorker([
 ])
 
 let init = () => {
-  worker->Msw.start
+  worker->Msw.start({
+    serviceWorker: {
+      url: "/colisweb-rescript-api-parse/mockServiceWorker.js",
+    },
+  })
 }
