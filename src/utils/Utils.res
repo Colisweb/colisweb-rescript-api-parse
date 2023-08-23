@@ -1,4 +1,5 @@
 exception RequestError
+exception DecodeError(Decco.decodeError)
 
 type request<'response, 'error> =
   | Idle
