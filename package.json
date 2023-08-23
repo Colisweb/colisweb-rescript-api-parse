@@ -6,6 +6,7 @@
   "dependencies": {
     "@colisweb/rescript-toolkit": "4.14.5",
     "@rescript/react": "0.11.0",
+    "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "10.4.15",
     "axios": "1.4.0",
     "decco": "1.6.0",

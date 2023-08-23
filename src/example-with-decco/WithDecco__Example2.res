@@ -1,6 +1,6 @@
 open! Utils
 
-@decco
+@decco.decode
 type rec deliveriesResponse = array<delivery>
 @decco
 and delivery = {
@@ -38,12 +38,12 @@ let fetchDeliveries = async () => {
   }
 }
 
-@module("@root/src/example-with-decco/WithDecco__Example1.res?raw")
+@module("@root/src/example-with-decco/WithDecco__Example2.res?raw")
 external codeExample: string = "default"
 
 @react.component
 let make = () => {
-  let (request, setRequest) = React.useState(() => Idle)
+  let (request, setRequest) = React.useState((): request<deliveriesResponse, 'a> => Idle)
   let {setState} = React.useContext(CodeBlock.Context.context)
 
   <div>
@@ -51,7 +51,8 @@ let make = () => {
       {"Example 2 (failure)"->React.string}
       <button
         className="text-sm border px-1 rounded hover:bg-blue-500 hover:text-white hover:border-blue-500"
-        onClick={_ => setState(Some({code: codeExample, title: "With decco : Example 1"}))}>
+        onClick={_ =>
+          setState(Some({code: codeExample, title: "With decco : Example 2 (failure)"}))}>
         {"See the code"->React.string}
       </button>
     </h3>
@@ -75,7 +76,7 @@ let make = () => {
       | Done(_) => React.null
       | Error(DecodeError(err)) =>
         <div>
-          <p className="text-red-500"> {"An error occured"->React.string} </p>
+          <p className="text-red-500"> {"Decoding"->React.string} </p>
           <pre> {err->Obj.magic->Js.Json.stringifyWithSpace(2)->React.string} </pre>
         </div>
       | Error(_) =>

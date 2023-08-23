@@ -14,6 +14,7 @@ module HighlightJs = {
   @module("highlight.js") @scope("default")
   external highlight: (string, 'a) => result = "highlight"
 }
+HighlightJs.registerLanguage("rescript", rescriptModule)
 
 module Context = {
   type codeContext = {

@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import createReScriptPlugin from "@jihchi/vite-plugin-rescript";
 import fs from "fs";
+import react from "@vitejs/plugin-react";
 
 const appDirectory = fs.realpathSync(process.cwd());
 const isProduction = process.env.NODE_ENV === "production";
@@ -14,6 +15,7 @@ export default defineConfig({
         suffix: ".bs.js",
       },
     }),
+    react(),
   ],
   optimizeDeps: {
     include: ["highlight.js"],
