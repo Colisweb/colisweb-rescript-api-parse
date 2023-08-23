@@ -1,11 +1,2 @@
-module.exports = {
-  content: [
-    "public/index.html",
-    "src/main.jsx",
-    "./lib/es6_global/src/**/*.bs.js",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+const config = require("@colisweb/rescript-toolkit/src/tailwind/tailwind.config.cjs");
+module.exports = { ...config, content: [...config.content, "src/main.jsx"] };

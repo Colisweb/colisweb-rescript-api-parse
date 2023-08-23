@@ -1,5 +1,6 @@
 open! Utils
 
+// The encoder is not needed
 @decco.decode
 type rec deliveriesResponse = array<delivery>
 @decco
@@ -48,17 +49,18 @@ let make = () => {
 
   <div>
     <h3 className="text-lg text-slate-500 flex flex-row items-center gap-2">
-      {"Example 2 (failure)"->React.string}
-      <button
-        className="text-sm border px-1 rounded hover:bg-blue-500 hover:text-white hover:border-blue-500"
+      {"Example 2 (decoding failure)"->React.string}
+      <Toolkit.Ui.Button
+        size=#xs
         onClick={_ =>
-          setState(Some({code: codeExample, title: "With decco : Example 2 (failure)"}))}>
+          setState(Some({code: codeExample, title: "With decco : Example 2 (decoding failure)"}))}>
         {"See the code"->React.string}
-      </button>
+      </Toolkit.Ui.Button>
     </h3>
-    <div className="flex flex-col items-start gap-4">
-      <button
-        className="px-2 py-1 rounded bg-slate-100"
+    <div className="flex flex-col items-start gap-4 mt-2">
+      <Toolkit.Ui.Button
+        color=#primary
+        isLoading={request === Loading}
         onClick={_ => {
           setRequest(_ => Loading)
           fetchDeliveries()
@@ -69,19 +71,19 @@ let make = () => {
           ->ignore
         }}>
         {"Do the request"->React.string}
-      </button>
+      </Toolkit.Ui.Button>
       {switch request {
       | Idle => React.null
       | Loading => "loading..."->React.string
       | Done(_) => React.null
       | Error(DecodeError(err)) =>
         <div>
-          <p className="text-red-500"> {"Decoding"->React.string} </p>
+          <p className="text-danger-500"> {"Decoding error"->React.string} </p>
           <pre> {err->Obj.magic->Js.Json.stringifyWithSpace(2)->React.string} </pre>
         </div>
       | Error(_) =>
         <div>
-          <p className="text-red-500"> {"An error occured"->React.string} </p>
+          <p className="text-danger-500"> {"An error occured"->React.string} </p>
         </div>
       }}
     </div>

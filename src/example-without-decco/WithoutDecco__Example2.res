@@ -32,15 +32,16 @@ let make = () => {
   <div>
     <h3 className="text-lg text-slate-500 flex flex-row items-center gap-2">
       {"Example 2"->React.string}
-      <button
-        className="text-sm border px-1 rounded hover:bg-blue-500 hover:text-white hover:border-blue-500"
+      <Toolkit.Ui.Button
+        size=#xs
         onClick={_ => setState(Some({code: codeExample, title: "Without decco : example 2"}))}>
         {"See the code"->React.string}
-      </button>
+      </Toolkit.Ui.Button>
     </h3>
-    <div className="flex flex-col items-start gap-4">
-      <button
-        className="px-2 py-1 rounded bg-slate-100"
+    <div className="flex flex-col items-start gap-4 mt-2">
+      <Toolkit.Ui.Button
+        color=#primary
+        isLoading={request === Loading}
         onClick={_ => {
           setRequest(_ => Loading)
           fetchSpecial()
@@ -55,7 +56,7 @@ let make = () => {
           ->ignore
         }}>
         {"Do the request"->React.string}
-      </button>
+      </Toolkit.Ui.Button>
       {switch request {
       | Idle => React.null
       | Loading => "loading..."->React.string
@@ -68,7 +69,7 @@ let make = () => {
               let name = name->Option.flatMap(Js.Nullable.toOption)->Option.getWithDefault("")
               let phone = phone->Option.getWithDefault("")
 
-              <div key={uniqueId}>
+              <div key={uniqueId} className="text-sm border p-1 rounded">
                 <p> {`Name: ${name}`->React.string} </p>
                 <p> {`Phone: ${phone}`->React.string} </p>
               </div>

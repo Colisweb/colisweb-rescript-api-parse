@@ -7,6 +7,14 @@
     {
       "dir": "src",
       "subdirs": true
+    },
+    {
+      "dir": "mocks",
+      "subdirs": true
+    },
+    {
+      "dir": "bindings",
+      "subdirs": true
     }
   ],
   "package-specs": [
