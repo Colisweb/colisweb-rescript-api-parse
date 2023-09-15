@@ -17,7 +17,7 @@ and specialType = [
 
 let fetchSpecial = () => {
   wait(2000)->Js.Promise2.then(() => {
-    Axios.get("http://someapi.com/special")->Js.Promise2.then(response => {
+    Axios.get("https://someapi.com/special")->Js.Promise2.then(response => {
       let deliveries: response = response["data"]->Obj.magic
 
       Js.Promise2.resolve(deliveries)

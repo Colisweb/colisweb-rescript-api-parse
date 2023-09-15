@@ -1,5 +1,5 @@
 let worker = Msw.setupWorker([
-  Msw.Rest.get("http://someapi.com/deliveries", (_req, res, ctx) => {
+  Msw.Rest.get("https://someapi.com/deliveries", (_req, res, ctx) => {
     let response = Array.makeBy(5, i => {
       WithoutDecco__Example1.id: i->Int.toString,
       address: "address",
@@ -12,7 +12,7 @@ let worker = Msw.setupWorker([
     })
     res(Msw.Ctx.json(ctx, response))
   }),
-  Msw.Rest.get("http://someapi.com/deliveriesFail", (_req, res, ctx) => {
+  Msw.Rest.get("https://someapi.com/deliveriesFail", (_req, res, ctx) => {
     let response = Array.makeBy(5, i => {
       WithoutDecco__Example1.id: i->Int.toString,
       address: 1->Obj.magic, // oh no!
@@ -25,7 +25,7 @@ let worker = Msw.setupWorker([
     })
     res(Msw.Ctx.json(ctx, response))
   }),
-  Msw.Rest.get("http://someapi.com/deliveriesDecode", (_req, res, ctx) => {
+  Msw.Rest.get("https://someapi.com/deliveriesDecode", (_req, res, ctx) => {
     let response = Array.makeBy(5, i => {
       WithDecco__Example3.id: i->Int.toString,
       address: "address",
@@ -39,7 +39,7 @@ let worker = Msw.setupWorker([
     })
     res(Msw.Ctx.json(ctx, response))
   }),
-  Msw.Rest.get("http://someapi.com/special", (_req, res, ctx) => {
+  Msw.Rest.get("https://someapi.com/special", (_req, res, ctx) => {
     let response = Array.makeBy(10, i => {
       WithoutDecco__Example2.uniqueId: i->Int.toString,
       phone: i > 5 ? Some("0320000" ++ i->Int.toString) : None,

@@ -18,7 +18,7 @@ and timeslot = {
 
 let fetchDeliveries = () => {
   wait(2000)->Js.Promise2.then(() => {
-    Axios.get("http://someapi.com/deliveries")->Js.Promise2.then(response => {
+    Axios.get("https://someapi.com/deliveries")->Js.Promise2.then(response => {
       let deliveries: deliveriesResponse = response["data"]->Obj.magic
 
       Js.Promise2.resolve(deliveries)

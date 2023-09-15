@@ -77,7 +77,7 @@ let fetchDeliveries = async () => {
   await wait(2000)
 
   try {
-    let response = await Axios.get("http://someapi.com/deliveriesDecode")
+    let response = await Axios.get("https://someapi.com/deliveriesDecode")
     let deliveriesDecoding = response["data"]->deliveriesResponse_decode
 
     switch deliveriesDecoding {
