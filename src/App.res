@@ -19,12 +19,13 @@ let make = () => {
           <h1 className="text-xl font-semibold">
             {"How to parse an API with ReScript"->React.string}
           </h1>
-          <small>
-            {"by Thomas Deconinck"->React.string}
-            <a href="https://colisweb.com" className="underline ml-1">
-              {"@colisweb"->React.string}
+          <div className="flex flex-row gap-2 text-xs">
+            <span> {"by Thomas Deconinck"->React.string} </span>
+            <a href="https://colisweb.com" className="underline"> {"@colisweb"->React.string} </a>
+            <a href="https://github.com/Colisweb/colisweb-rescript-api-parse" className="underline">
+              {"Check the code on Github"->React.string}
             </a>
-          </small>
+          </div>
         </div>
         <ExampleWithoutDecco />
         <ExampleWithDecco />

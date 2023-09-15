@@ -6,6 +6,7 @@ let make = () => {
       <div className="flex flex-col gap-8">
         <WithDecco__Example1 />
         <WithDecco__Example2 />
+        <WithDecco__Example3 />
       </div>
     </Toolkit.Ui.Card.Body>
   </Toolkit.Ui.Card>

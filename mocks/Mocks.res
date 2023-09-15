@@ -25,6 +25,20 @@ let worker = Msw.setupWorker([
     })
     res(Msw.Ctx.json(ctx, response))
   }),
+  Msw.Rest.get("http://someapi.com/deliveriesDecode", (_req, res, ctx) => {
+    let response = Array.makeBy(5, i => {
+      WithDecco__Example3.id: i->Int.toString,
+      address: "address",
+      country: None,
+      clientName: i < 5 ? Some("clientName") : None,
+      energyType: i < 5 ? #electric : #gas,
+      timeslot: {
+        start: Js.Date.make(),
+        end: Js.Date.make(),
+      },
+    })
+    res(Msw.Ctx.json(ctx, response))
+  }),
   Msw.Rest.get("http://someapi.com/special", (_req, res, ctx) => {
     let response = Array.makeBy(10, i => {
       WithoutDecco__Example2.uniqueId: i->Int.toString,
